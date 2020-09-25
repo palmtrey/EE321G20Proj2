@@ -4,6 +4,8 @@ import numpy as np # For MATHS
 
 data = np.genfromtxt('gen_data.csv', delimiter=',') #ndarray from numpy
 
+print("Shape of imported data: " + str(data.shape))
+
 fig1 = plt.figure(figsize=(200, 3))
 ax = plt.axes(projection="3d")
 
@@ -16,8 +18,17 @@ meanOfData = [data[:, 0].mean(), data[:, 1].mean(), data[:, 2].mean()]
 
 demeanedData = [data - meanOfData]
 
-print(meanOfData)
+transposedArray = np.transpose(demeanedData)
 
-print(demeanedData)
+r = data[:, 0].size
+
+print(r)
+
+cd = (1/(r-1))*(transposedArray*demeanedData)
+
+print(cd.shape)
+
+
+#print(transposedArray)
 
 #print(data.shape)
