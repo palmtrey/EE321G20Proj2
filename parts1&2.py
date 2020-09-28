@@ -28,6 +28,8 @@ cd = (1/(r-1))*(transposedArray*demeanedData)
 
 print(cd.shape)
 
+#Qd, Dd = np.linalg.eig(cd)
+
 
 #print(transposedArray)
 
