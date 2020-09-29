@@ -20,7 +20,6 @@ ax.scatter3D(data[:, 0], data[:, 1], data[:, 2], color="green")
 plt.title("gen_data in 3D")
 #plt.show()
 
-
 r = data[:, 0].size  # r = 200
 
 # Find the mean of the data
@@ -34,36 +33,15 @@ demeanedDataProper = np.squeeze(np.asarray(demeanedData))  # Gets rid of the thi
 
 print("Shape of demeaned data: " + str(demeanedDataProper.shape))
 
-
 transposedArray = np.transpose(demeanedDataProper)
-
 
 print("Shape of transposed array: " + str(transposedArray.shape))
 
+cd = (1/(r-1))*(np.dot(transposedArray, demeanedDataProper))
 
-cd = (1/(r-1))*(transposedArray*demeanedDataProper)
+qd, dd = np.linalg.eig(cd)
 
-#print("Shape of cd: " + str(cd.shape))
-
-A = np.array([[5, 3, 4], [3, 1, 3]])
-B = np.array([1, 2, 3])
-
-print(cd.shape)
-
-#print(np.linalg.eigvals(np.diag(B)))
-
-cd[:, :, 3:200] = 0
-
-print(cd.shape)
-
-#print(np.linalg.eig(cd))
-
-#np.linalg.eigh(cd)
-
-
-#print(transposedArray)
-
-#print(data.shape)
+print(qd)
 
 
 
