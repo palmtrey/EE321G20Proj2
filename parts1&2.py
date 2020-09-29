@@ -31,9 +31,13 @@ print(r)
 
 cd = (1/(r-1))*(transposedArray*demeanedData)
 
-print(cd.shape)
+print("Shape of cd: " + str(cd.shape))
 
-#Qd, Dd = np.linalg.eig(cd)
+A = np.array([[5, 3], [3, 1]])
+
+print(np.linalg.eig(A))
+
+#np.linalg.eig(cd)
 
 
 #print(transposedArray)
