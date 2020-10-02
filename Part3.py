@@ -69,5 +69,5 @@ y = np.zeros((300, 1))
 #Scatter Plot
 plt.figure(0)
 plt.scatter(reconstructed_data, y)
-plt.title('Reconstructed data projected onto one dimension')
+plt.title('Part 3: Reconstructed data projected onto one dimension')
 plt.show()

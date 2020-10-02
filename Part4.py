@@ -1,5 +1,5 @@
-# Title: Parts 1 & 2
-# Purpose: To fulfill parts 1 and 2 of project 2 of EE 321: Systems and Signal Processing
+# Title: Part 4
+# Purpose: To fulfill parts 1 and 4 of project 2 of EE 321: Systems and Signal Processing
 # Developers: Shawn Boyd, Cameron Palmer, Siddesh Sood
 # Last Modified: October 2, 2020
 
@@ -10,16 +10,16 @@ import numpy as np  # For MATHS
 ## 1 Examine the data
 
 # Import the data from the csv file
-data = np.genfromtxt('gen_data.csv', delimiter=',') #ndarray from numpy
+data = np.genfromtxt('keystroke_data.csv', delimiter=',') #ndarray from numpy
 
 # Print out the shape of the imported data
 print("Shape of imported data: " + str(data.shape))
 
 # Creating plot
-fig1 = plt.figure(figsize=(200, 3))
+fig1 = plt.figure(figsize=(200, 21))
 ax = plt.axes(projection="3d")
 ax.scatter3D(data[:, 0], data[:, 1], data[:, 2], color="green")
-plt.title("gen_data in 3D")
+plt.title("keystroke_data in 3D")
 plt.show()
 
 
@@ -32,8 +32,8 @@ r = data[:, 0].size  # r = 200
 meanOfData = np.mean(data, axis = 0)
 
 # Demean the data
-demeanedData = [np.asarray(data) - np.asarray(meanOfData)]  # Yields an array of shape (1, 200, 3)
-demeanedDataProper = np.squeeze(np.asarray(demeanedData))  # Gets rid of the third dimension of size 1. New shape is (200, 3)
+demeanedData = [np.asarray(data) - np.asarray(meanOfData)]  # Yields an array of shape (1, 200, 21)
+demeanedDataProper = np.squeeze(np.asarray(demeanedData))  # Gets rid of the third dimension of size 1. New shape is (300, 3)
 
 transposedArray = np.transpose(demeanedDataProper)
 
@@ -58,6 +58,7 @@ print("dd: " + str(dd))
 
 
 #Selecting the eigenvector corresponding to the highest valued eigenvalue
+num_comp = 1
 prin_comps = qd[:, [0]]
 
 reconstructed_data =np.dot(data,(prin_comps))
@@ -65,8 +66,8 @@ reconstructed_data =np.dot(data,(prin_comps))
 y = np.zeros((200,1))
 
 
-#Scatter Plot
+#Scatter plot
 plt.figure(0)
 plt.scatter(reconstructed_data, y)
-plt.title('Reconstructed data projected onto one dimension')
+plt.title('Part 4: Reconstructed data projected down onto one dimension')
 plt.show()
