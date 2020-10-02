@@ -1,7 +1,7 @@
-# Title: Parts 1 & 4
-# Purpose: To fulfill parts 1 and 4 of project 4 of EE 321: Systems and Signal Processing
+# Title: Part 4
+# Purpose: To fulfill parts 1 and 4 of project 2 of EE 321: Systems and Signal Processing
 # Developers: Shawn Boyd, Cameron Palmer, Siddesh Sood
-# Last Modified: October 1, 2020
+# Last Modified: October 2, 2020
 
 # Importing libraries
 import matplotlib.pyplot as plt  # For 2D plotting

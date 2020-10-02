@@ -1,7 +1,7 @@
 # Title: Parts 1 & 2
 # Purpose: To fulfill parts 1 and 2 of project 2 of EE 321: Systems and Signal Processing
 # Developers: Shawn Boyd, Cameron Palmer, Siddesh Sood
-# Last Modified: October 1, 2020
+# Last Modified: October 2, 2020
 
 # Importing libraries
 import matplotlib.pyplot as plt  # For 2D plotting
@@ -58,7 +58,6 @@ print("dd: " + str(dd))
 
 
 #Selecting the eigenvector corresponding to the highest valued eigenvalue
-num_comp = 1
 prin_comps = qd[:, [0]]
 
 reconstructed_data =np.dot(data,(prin_comps))
@@ -69,5 +68,5 @@ y = np.zeros((200,1))
 #Scatter Plot
 plt.figure(0)
 plt.scatter(reconstructed_data, y)
-plt.title('Reconstructed data projected down onto one dimension')
+plt.title('Reconstructed data projected onto one dimension')
 plt.show()
