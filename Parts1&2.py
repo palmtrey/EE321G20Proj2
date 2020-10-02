@@ -37,7 +37,7 @@ demeanedDataProper = np.squeeze(np.asarray(demeanedData))  # Gets rid of the thi
 
 transposedArray = np.transpose(demeanedDataProper)
 
-cd = (1/(r-1))*(np.dot(transposedArray, demeanedDataProper))
+cd = (1/(r-1))*(np.dot(transposedArray, demeanedDataProper)) # Calculate the covariance matrix of the data
 
 # Calculate qd and dd
 dd, qd = np.linalg.eig(cd) # qd eigenvectors, dd eigenvalues
